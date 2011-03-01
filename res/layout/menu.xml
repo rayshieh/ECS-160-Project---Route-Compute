@@ -1,0 +1,52 @@
+<RelativeLayout 
+	android:id="@+id/main_menu" 
+	android:layout_width="fill_parent" 
+	android:layout_height="fill_parent" 
+	xmlns:android="http://schemas.android.com/apk/res/android">
+	
+	<TextView
+	  	android:id="@+id/intro_msg"
+	  	android:layout_width="fill_parent"
+	  	android:layout_height="wrap_content"
+	  	android:text="Please choose one of the following options:"/>
+	<Button
+		android:id="@+id/current_job" 
+		android:layout_width="fill_parent" 
+		android:layout_height="wrap_content" 
+		android:layout_centerHorizontal="true" 
+		android:text="Current Job"
+		android:layout_below="@id/intro_msg">
+		</Button>
+	<Button
+		android:id="@+id/send_package" 
+		android:layout_width="fill_parent" 
+		android:layout_height="wrap_content" 
+		android:layout_centerHorizontal="true" 
+		android:text="Send Package" 
+		android:layout_below="@id/current_job">
+		</Button>
+	<Button
+		android:id="@+id/cancel_package" 
+		android:layout_width="fill_parent" 
+		android:layout_height="wrap_content" 
+		android:layout_centerHorizontal="true" 
+		android:text="Cancel Package" 
+		android:layout_below="@id/send_package">
+		</Button>
+	<Button
+		android:id="@+id/add_trustee" 
+		android:layout_width="fill_parent" 
+		android:layout_height="wrap_content" 
+		android:layout_centerHorizontal="true" 
+		android:text="Add Trustee" 
+		android:layout_below="@id/cancel_package">
+		</Button>
+	<Button
+		android:id="@+id/remove_trustee" 
+		android:layout_width="fill_parent" 
+		android:layout_height="wrap_content" 
+		android:layout_centerHorizontal="true" 
+		android:text="Remove Trustee" 
+		android:layout_below="@id/add_trustee">
+		</Button>
+</RelativeLayout>

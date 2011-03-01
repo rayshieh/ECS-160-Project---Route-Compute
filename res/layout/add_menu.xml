@@ -1,0 +1,45 @@
+<RelativeLayout 
+	android:id="@+id/add_menu" 
+	android:layout_width="fill_parent" 
+	android:layout_height="fill_parent" 
+	xmlns:android="http://schemas.android.com/apk/res/android">
+	
+	<TextView
+		android:id="@+id/enter_name"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:text="Please enter the name to be display (maximum 20 characters include space):"/>
+		
+	<EditText
+        android:id="@+id/name_entry"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:drawable/editbox_background"
+        android:layout_below="@id/enter_name"/>
+        
+	<TextView
+		android:id="@+id/enter_number"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:text="Please enter his/her 10 digits phone number, starting with the area code:"
+		android:layout_below="@id/name_entry"/>
+		
+	<EditText
+        android:id="@+id/number_entry"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:drawable/editbox_background"
+        android:numeric="integer"
+        android:layout_below="@id/enter_number"/>
+        
+
+	<Button
+		android:id="@+id/addF" 
+		android:layout_width="fill_parent" 
+		android:layout_height="wrap_content" 
+		android:layout_centerHorizontal="true"
+		android:layout_below="@id/number_entry" 
+		android:text="Add">
+		</Button>
+	
+</RelativeLayout>
