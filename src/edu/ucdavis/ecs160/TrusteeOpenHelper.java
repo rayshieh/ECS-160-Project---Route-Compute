@@ -8,34 +8,28 @@ package edu.ucdavis.ecs160;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
-import android.database.sqlite.SQLiteDatabase.CursorFactory;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.database.sqlite.SQLiteDatabase.CursorFactory;
 import android.util.Log;
 
 public class TrusteeOpenHelper extends SQLiteOpenHelper {
 
-	public static final String KEY_NUMBER = "Number";
-	public static final String KEY_NAME = "Name";
+	public static final String NUMBER = Parameters.KEY_NUMBER;
+	public static final String NAME = Parameters.KEY_NAME;
 
 	private static final String TAG = "TrusteeOpenHelper";
-    private static final int DATABASE_VERSION = 2;
-    private static final String DATABASE_NAME = Parameters.DBNAME;
-    private static final String DATABASE_TABLE = Parameters.TBLNAME;
-    private final Context context;
+    private static final String DATABASE_TBLNAME= Parameters.TBLNAME;
     
     //Create database query
     private static final String DATABASE_CREATE =
-        "Create table " + DATABASE_NAME + " (" +  
-        	KEY_NUMBER + " integer primary key, " +
-        	KEY_NAME + " text not null);";
+        "Create table " + DATABASE_TBLNAME + " (" +  
+        NAME + " text not null, " +
+    	NUMBER + " integer primary key);";
         
     //Auto generated constructor
 	public TrusteeOpenHelper(Context context, String name,
 			CursorFactory factory, int version) {
 		super(context, name, factory, version);
-		//TODO some of the private final parameters may need to these arguments
-		//Need to check later on how did the constructor called
-		this.context = context;
 	}
 	
 	@Override

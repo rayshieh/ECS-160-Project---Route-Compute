@@ -13,21 +13,25 @@ import android.widget.Button;
 
 public class Menu extends Activity {
     /** Called when the activity is first created. */
-    private static final String TAG = "Menu"; 
+    private static final int DATABASE_VERSION = 2;
+    private static final String TAG = "Menu";
     
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.menu);
         
-		//Menu buttons
+		//Menu buttons        
         final Button currentB = (Button) findViewById(R.id.current_job);
         final Button sendB = (Button) findViewById(R.id.send_package);
         final Button cancelB = (Button) findViewById(R.id.cancel_package);
         final Button addB = (Button) findViewById(R.id.add_trustee);
         final Button removeB = (Button) findViewById(R.id.remove_trustee);
-        
     	try {
             //Create a file to store the data
+            TrusteeHandler th = TrusteeHandler.getInstance(getApplicationContext(), Parameters.DBNAME, null, 2);
+            th.openDB();//this line should've create the database and create a table
+            th.closeDB();
+            
             FileOutputStream fos = openFileOutput(Parameters.FILENAME, Context.MODE_APPEND);
             fos.close();
             

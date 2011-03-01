@@ -28,12 +28,12 @@ public class AddTrustee extends Activity {
 	            	final String name = nameEntry.getText().toString();
 	            	final String number = numberEntry.getText().toString();
 	            	//Validation
-	            	String result = new TrusteeHandler().addTrustee(
-	            			getApplicationContext(),name, number);
+	            	TrusteeHandler th = TrusteeHandler.getInstance(getApplicationContext(), Parameters.DBNAME, null, 2);
+	            	String result =  th.addTrustee(name, number);
 	            	if (result != null)
 	            		//Failed
 	            		Toast.makeText(getApplicationContext(), 
-	            			result, Toast.LENGTH_SHORT).show();
+	            			result, Toast.LENGTH_LONG).show();
 	            	else {
 	            		//Added into the list
 	            		Toast.makeText(getApplicationContext(), 
